@@ -1,5 +1,30 @@
+function getUsers() {
+    return ['12', 4421, 45]
+}
 
-describe('Modulo de teste para avaliação', () => {
+
+describe('Simulando testes', _ => {
+
+    it(`Should return name 'Leia'`, () => {
+
+        const mockGetUsers = jest.fn()
+
+        mockGetUsers.mockReturnValueOnce(['Leia'])
+
+        expect(mockGetUsers()[0]).toBe('Leia')
+
+        expect().toBe("asdasd")
+
+        expect().toBeNull()
+
+        expect()
+    })
+
+})
+
+
+
+describe('Modulo de teste para avaliação', _ => {
 
     it('Iniciando uma saída válida >>', () => {
         expect(5).toBe(5)

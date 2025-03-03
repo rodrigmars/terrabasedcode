@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "verbose": true
+  },
   "scripts": {
+    "displayName": "Terra-Based-Code",
     "test": "jest --coverage"
   },
   "keywords": [],
