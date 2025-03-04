@@ -1,3 +1,20 @@
+const poliedros = {
+    status: true,
+    sour: ['círculo', 'hiperbolóide', 'esferoide', 'prisma', 'elipse',
+        'poliedro', 'paralelogramo', 'oval', 'tetraedro', 'quadrado']
+};
+
+xdescribe('Test poliedros', () => {
+    it('....', () => {
+        expect(poliedros.status).toBeTruthy();
+    });
+
+    it('...', () => {
+        expect(poliedros.status).toBeFalsy();
+    });
+});
+
+
 function getUsers() {
     return ['12', 4421, 45]
 }
@@ -5,19 +22,58 @@ function getUsers() {
 
 describe('Simulando testes', _ => {
 
-    it(`Should return name 'Leia'`, () => {
+    it(`Should mock function ultra successfully returned`, () => {
 
-        const mockGetUsers = jest.fn()
+        const mockUltra = jest.fn()
 
-        mockGetUsers.mockReturnValueOnce(['Leia'])
+        mockUltra.mockImplementationOnce(() => true)
 
-        expect(mockGetUsers()[0]).toBe('Leia')
+        mockUltra()
 
-        expect().toBe("asdasd")
+        expect(mockUltra).toHaveReturned()
 
-        expect().toBeNull()
+    })
 
-        expect()
+    it(`Should mock function ultra returned true`, () => {
+
+        const mockUltra = jest.fn()
+
+        mockUltra.mockImplementationOnce(() => true)
+
+        expect(mockUltra()).toBe(true)
+
+    })
+
+    xit(`Should return name 'Leia'`, () => {
+
+        // const mockGetUsers = jest.fn()
+
+        // mockGetUsers.mockReturnValueOnce(['Leia'])
+
+        // expect(mockGetUsers()[0]).toBe('Leia')
+
+        const dados = [1, 5, 8, 9, 8, 6, 1, 5]
+
+        expect(dados).toHaveLength(8)
+
+        expect(dados).toContain(5)
+
+        expect(dados).not.toContain(3)
+
+        expect([]).toEqual([])
+
+        expect(undefined).toBeUndefined()
+
+        expect(null).toBeNull()
+
+        expect(typeof '').toBe('string')
+
+        expect(typeof 10).toBe('number')
+
+        expect(typeof {}).toBe('object')
+
+        expect(typeof true).toBe('boolean')
+
     })
 
 })
