@@ -8,7 +8,7 @@
     "verbose": true
   },
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest --coverage"
   },
   "keywords": [],
   "author": "",
