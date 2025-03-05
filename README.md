@@ -8,9 +8,9 @@
 
 *Instalando dependências :eyes:*
 ```shell
-pnpm install
+pnpm i
 ```
 *Disparando um teste*
 ```shell
-pnpm test
+pnpm t
 ```
