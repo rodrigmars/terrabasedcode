@@ -7,37 +7,36 @@ const poliedros = {
         'poliedro', 'paralelogramo', 'oval', 'tetraedro', 'quadrado']
 };
 
+function convertToBinary(divided) {
+
+    function getQuotient(a, b) {
+        return Math.trunc(a / b)
+    }
+
+    const divisor = 2
+    let remainder = []
+
+    while (1) {
+
+        remainder.push(divided % divisor)
+        divided = getQuotient(divided, divisor)
+
+        if (divisor > divided) {
+            remainder.push(divided)
+            break
+        }
+
+    }
+
+    return ~~remainder.reverse().toString().replaceAll(',', '')
+}
+
 
 describe('Base binaria', _ => {
 
     it('Binary conversion should return 1100', () => {
 
-        let divided = 12
-        const divisor = 2
-        let remainder = []
-
-        function getQuotient(a, b) {
-            return Math.trunc(a / b)
-        }
-
-        function convertToBinary(value) {
-            return ~~value.reverse().
-                toString().
-                replaceAll(',', '')
-        }
-
-        while (1) {
-
-            remainder.push(divided % divisor)
-            divided = getQuotient(divided, divisor)
-
-            if (divisor > divided) {
-                remainder.push(divided)
-                break
-            }
-        }
-
-        expect(convertToBinary(remainder)).toEqual(1100)
+        expect(convertToBinary(12)).toEqual(1100)
     })
 })
 
